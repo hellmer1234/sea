@@ -26,12 +26,6 @@ public class Archer extends ParseObject {
     // MotDePasse String
     // AppartientAClub Pointer<Club>
 
-    /*
-    public String getObjectId(){
-        return getString("objectId");
-    }
-*/
-
 
     public String getNom(){
         return getString("Nom");

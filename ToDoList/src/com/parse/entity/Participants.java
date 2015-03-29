@@ -1,7 +1,10 @@
 package com.parse.entity;
 
-/**
- * Created by LMR on 29/03/15.
- */
-public class Participants {
+import com.parse.*;
+
+@ParseClassName("Participants")
+public class Participants extends ParseObject {
+    public Participants() {
+        // A default constructor is required.
+    }
 }

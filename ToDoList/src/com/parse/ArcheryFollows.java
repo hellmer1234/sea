@@ -5,6 +5,7 @@ import com.parse.entity.Archer;
 import com.parse.entity.ArcherQuery;
 import com.parse.entity.Arc;
 import com.parse.entity.ArcQuery;
+import com.parse.entity.Club;
 import com.parse.entity.ClubQuery;
 
 import android.util.Log;
@@ -29,6 +30,7 @@ public class ArcheryFollows extends Application {
         //Enregistrer les sous-classes
         ParseObject.registerSubclass(Archer.class);
         ParseObject.registerSubclass(Arc.class);
+        ParseObject.registerSubclass(Club.class);
 
         // Add your initialization code here
         Parse.initialize(this, "PhyOxGjACcVSyOnIQUuwSjs2R9ORvdeWVciTHbty", "wgEpJtIAQYFz8yytcFICVv3u2fgpVmnDF5WjXeQk");
@@ -43,7 +45,10 @@ public class ArcheryFollows extends Application {
 
 
         ArcherQuery aq = new ArcherQuery();
+        ArcQuery arcq = new ArcQuery();
         ClubQuery cq = new ClubQuery();
+
+
         //TestCreation d'un archer
         //aq.createArcher();
 
@@ -79,6 +84,20 @@ public class ArcheryFollows extends Application {
         }
         catch (Exception e){
             Log.v("add", e.getMessage());
+        }
+
+        cq.createClub();
+
+        Club myClub = new Club();
+        myClub.setNom("LMRTestt");
+        myClub.setIdentifiant("1234A");
+        myClub.setLieu("Tot");
+        myClub.setPresidentObjectId(aq.retrieveArcherByLicence("Toto"));
+        try {
+            myClub.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
         }
     }
 }

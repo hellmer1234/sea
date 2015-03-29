@@ -7,6 +7,19 @@ import com.parse.ParseQuery;
 
 
 public class ClubQuery {
+    public void createClub()
+    {
+        Club myClub = new Club();
+        myClub.setNom("Test");
+        myClub.setIdentifiant("1234A");
+        try {
+            myClub.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
+        }
+    }
+
     public String retrieveClubByLicence(String licence)
     {
         ParseQuery query=new ParseQuery("Club");

@@ -21,10 +21,6 @@ public class Arc extends ParseObject {
     //
     // Proprietaire Pointer<Archer>
 
-    public String getObjectId(){
-        return getString("objectId");
-    }
-
     public String getTaille(){
         return getString("Taille");
     }
