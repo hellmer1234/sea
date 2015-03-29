@@ -7,6 +7,10 @@ import com.parse.entity.Arc;
 import com.parse.entity.ArcQuery;
 import com.parse.entity.Club;
 import com.parse.entity.ClubQuery;
+import com.parse.entity.Blason;
+import com.parse.entity.BlasonQuery;
+import com.parse.entity.Evenement;
+import com.parse.entity.EvenementQuery;
 
 import android.util.Log;
 
@@ -31,6 +35,8 @@ public class ArcheryFollows extends Application {
         ParseObject.registerSubclass(Archer.class);
         ParseObject.registerSubclass(Arc.class);
         ParseObject.registerSubclass(Club.class);
+        ParseObject.registerSubclass(Blason.class);
+        ParseObject.registerSubclass(Evenement.class);
 
         // Add your initialization code here
         Parse.initialize(this, "PhyOxGjACcVSyOnIQUuwSjs2R9ORvdeWVciTHbty", "wgEpJtIAQYFz8yytcFICVv3u2fgpVmnDF5WjXeQk");
@@ -47,6 +53,8 @@ public class ArcheryFollows extends Application {
         ArcherQuery aq = new ArcherQuery();
         ArcQuery arcq = new ArcQuery();
         ClubQuery cq = new ClubQuery();
+        BlasonQuery bq = new BlasonQuery();
+        EvenementQuery eq = new EvenementQuery();
 
 
         //TestCreation d'un archer
@@ -95,6 +103,34 @@ public class ArcheryFollows extends Application {
         myClub.setPresidentObjectId(aq.retrieveArcherByLicence("Toto"));
         try {
             myClub.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
+        }
+
+        eq.createEvenement();
+
+        Date sysdate = new Date();
+
+        Evenement myEvent = new Evenement();
+        myEvent.setNom("MyEvent");
+        myEvent.setDateEvenement(sysdate);
+        myEvent.setClubObjectId(cq.retrieveClubByLicence("67203001"));
+        try {
+            myEvent.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
+        }
+
+        bq.createBlason();
+
+        Blason myBlason = new Blason();
+        myBlason.setDiametre("Test");
+        myBlason.setDistance("1234A");
+        myBlason.setEvenementObjectId(myEvent.getObjectId());
+        try {
+            myBlason.save();
         } catch (ParseException e)
         {
             //System.out.println(e.getMessage());

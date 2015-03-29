@@ -1,7 +1,20 @@
 package com.parse.entity;
 
-/**
- * Created by LMR on 29/03/15.
- */
+import com.parse.ParseException;
+
+
 public class BlasonQuery {
+
+    public void createBlason()
+    {
+        Blason myBlason = new Blason();
+        myBlason.setDiametre("Test");
+        myBlason.setDistance("1234A");
+        try {
+            myBlason.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
+        }
+    }
 }
