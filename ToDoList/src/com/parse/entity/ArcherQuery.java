@@ -23,26 +23,15 @@ public class ArcherQuery {
         }
     }
 
-    public String retrieveArcherByLicence(String licence, String annee)
+    public String retrieveArcherByLicence(String licence)
     {
-        List<Archer> result;
         ParseQuery query=new ParseQuery("Archer");
-        //query.include("objectId");
-        //parseQueryArcher.include("containedInConversation");
-
-        //ParseQuery<Archer> query = ParseQuery.getQuery("Archer");
         query.whereEqualTo("Licence", licence);
-        //query.whereEqualTo("Annee", annee);
         query.setLimit(1);
 
         try
         {
             ParseObject po = query.getFirst();
-            //Archer archer= (Archer)po;
-            //System.out.println(result.size());`
-
-                Log.v("add","ID: " + po.getObjectId() );
-
             return po.getObjectId();
         }
         catch (ParseException e)

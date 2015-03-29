@@ -61,7 +61,7 @@ public class Archer extends ParseObject {
         return getDate("DateDeNaissance");
     }
 
-    public String getClubObjetcId(){
+    public String getClubObjectId(){
         return getString("AppartientAClub");
     }
 
@@ -97,7 +97,7 @@ public class Archer extends ParseObject {
         put("DateDeNaissance", dateDeNaissance);
     }
 
-    public void setClubObjetcId( String clubObjectId ){
+    public void setClubObjectId( String clubObjectId ){
         put("AppartientAClub", ParseObject.createWithoutData("Club", clubObjectId));
     }
 

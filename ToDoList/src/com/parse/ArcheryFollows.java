@@ -5,6 +5,8 @@ import com.parse.entity.Archer;
 import com.parse.entity.ArcherQuery;
 import com.parse.entity.Arc;
 import com.parse.entity.ArcQuery;
+import com.parse.entity.ClubQuery;
+
 import android.util.Log;
 
 import android.app.Application;
@@ -41,23 +43,26 @@ public class ArcheryFollows extends Application {
 
 
         ArcherQuery aq = new ArcherQuery();
+        ClubQuery cq = new ClubQuery();
         //TestCreation d'un archer
         //aq.createArcher();
 
 
-        /*Archer a = new Archer();
+        Archer a = new Archer();
         a.setLicence("Toto");
         a.setNom("Dodo");
         a.setPrenom("LaSaumure");
         a.setAnnee(2015);
         a.setDateDeNaissance(new Date());
         a.setNiveau("1");
+        a.setClubObjectId(cq.retrieveClubByLicence("67203001"));
+        Log.v("add", cq.retrieveClubByLicence("67203001"));
         try {
             a.save();
         }
         catch (ParseException e){
 
-        }*/
+        }
 
         //ArcQuery q = new ArcQuery();
         //q.createArc();
@@ -68,7 +73,7 @@ public class ArcheryFollows extends Application {
         myArc.setType("RobinDesBois");
 
         //attendu : eXPzjJDZ8P
-        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence("Toto", "2015"));
+        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence("Toto"));
         try {
             myArc.save();
         }
