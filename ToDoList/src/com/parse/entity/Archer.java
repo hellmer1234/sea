@@ -26,9 +26,12 @@ public class Archer extends ParseObject {
     // MotDePasse String
     // AppartientAClub Pointer<Club>
 
+    /*
     public String getObjectId(){
         return getString("objectId");
     }
+*/
+
 
     public String getNom(){
         return getString("Nom");
@@ -95,7 +98,7 @@ public class Archer extends ParseObject {
     }
 
     public void setClubObjetcId( String clubObjectId ){
-        put("AppartientAClub", clubObjectId);
+        put("AppartientAClub", ParseObject.createWithoutData("Club", clubObjectId));
     }
 
     /*public ParseUser getOwner() {
@@ -105,9 +108,5 @@ public class Archer extends ParseObject {
         put("owner", user);
     }*/
 
-
-    public void play() {
-        // Ah, that takes me back!
-    }
 
 }

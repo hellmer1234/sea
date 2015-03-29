@@ -3,6 +3,9 @@ package com.parse;
 import com.parse.*;
 import com.parse.entity.Archer;
 import com.parse.entity.ArcherQuery;
+import com.parse.entity.Arc;
+import com.parse.entity.ArcQuery;
+import android.util.Log;
 
 import android.app.Application;
 
@@ -23,6 +26,7 @@ public class ArcheryFollows extends Application {
 
         //Enregistrer les sous-classes
         ParseObject.registerSubclass(Archer.class);
+        ParseObject.registerSubclass(Arc.class);
 
         // Add your initialization code here
         Parse.initialize(this, "PhyOxGjACcVSyOnIQUuwSjs2R9ORvdeWVciTHbty", "wgEpJtIAQYFz8yytcFICVv3u2fgpVmnDF5WjXeQk");
@@ -36,11 +40,12 @@ public class ArcheryFollows extends Application {
         ParseACL.setDefaultACL(defaultACL, true);
 
 
-        //ArcherQuery q = new ArcherQuery();
+        ArcherQuery aq = new ArcherQuery();
         //TestCreation d'un archer
-        //q.createArcher();
+        //aq.createArcher();
 
-        Archer a = new Archer();
+
+        /*Archer a = new Archer();
         a.setLicence("Toto");
         a.setNom("Dodo");
         a.setPrenom("LaSaumure");
@@ -52,6 +57,23 @@ public class ArcheryFollows extends Application {
         }
         catch (ParseException e){
 
+        }*/
+
+        //ArcQuery q = new ArcQuery();
+        //q.createArc();
+
+        Arc myArc = new Arc();
+        myArc.setPuissance("1234");
+        myArc.setTaille("1m50");
+        myArc.setType("RobinDesBois");
+
+        //attendu : eXPzjJDZ8P
+        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence("Toto", "2015"));
+        try {
+            myArc.save();
+        }
+        catch (Exception e){
+            Log.v("add", e.getMessage());
         }
     }
 }
