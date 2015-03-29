@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ToDoList/libs/ParseFacebookUtilsV4-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ToDoList/libs/bolts-android-1.1.4-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ToDoList/libs/bolts-android-1.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ToDoList/libs/ParseCrashReporting-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ToDoList/libs/Parse-1.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
