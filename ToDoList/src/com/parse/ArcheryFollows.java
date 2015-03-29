@@ -11,6 +11,8 @@ import com.parse.entity.Blason;
 import com.parse.entity.BlasonQuery;
 import com.parse.entity.Evenement;
 import com.parse.entity.EvenementQuery;
+import com.parse.entity.Participants;
+import com.parse.entity.ParticipantsQuery;
 
 import android.util.Log;
 
@@ -37,6 +39,7 @@ public class ArcheryFollows extends Application {
         ParseObject.registerSubclass(Club.class);
         ParseObject.registerSubclass(Blason.class);
         ParseObject.registerSubclass(Evenement.class);
+        ParseObject.registerSubclass(Participants.class);
 
         // Add your initialization code here
         Parse.initialize(this, "PhyOxGjACcVSyOnIQUuwSjs2R9ORvdeWVciTHbty", "wgEpJtIAQYFz8yytcFICVv3u2fgpVmnDF5WjXeQk");
@@ -55,6 +58,7 @@ public class ArcheryFollows extends Application {
         ClubQuery cq = new ClubQuery();
         BlasonQuery bq = new BlasonQuery();
         EvenementQuery eq = new EvenementQuery();
+        ParticipantsQuery pq = new ParticipantsQuery();
 
 
         //TestCreation d'un archer
@@ -131,6 +135,18 @@ public class ArcheryFollows extends Application {
         myBlason.setEvenementObjectId(myEvent.getObjectId());
         try {
             myBlason.save();
+        } catch (ParseException e)
+        {
+            //System.out.println(e.getMessage());
+        }
+
+        pq.inscription();
+
+        Participants myInscription = new Participants();
+        myInscription.setParticipantObjectId(aq.retrieveArcherByLicence("Toto"));
+        myInscription.setEvenementObjectId(myEvent.getObjectId());
+        try {
+            myInscription.save();
         } catch (ParseException e)
         {
             //System.out.println(e.getMessage());
