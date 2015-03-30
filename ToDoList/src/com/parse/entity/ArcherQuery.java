@@ -7,6 +7,7 @@ import java.util.List;
 import android.util.Log;
 import com.parse.FindCallback;
 import com.parse.entity.Archer;
+import com.parse.util.Utils;
 
 
 public class ArcherQuery {
@@ -40,6 +41,26 @@ public class ArcherQuery {
         }
 
         return "NoResult";
+    }
+
+    public String authenticate(String licence, String password)
+    {
+        ParseQuery query=new ParseQuery("Archer");
+        query.whereEqualTo("Licence", licence);
+        query.whereEqualTo("MotDePasse", Utils.MD5(password));
+        query.setLimit(1);
+
+        try
+        {
+            ParseObject po = query.getFirst();
+            return "AUTHENTICATED";
+        }
+        catch (ParseException e)
+        {
+
+        }
+
+        return "BAD_AUTHENTICATION";
     }
 
 }

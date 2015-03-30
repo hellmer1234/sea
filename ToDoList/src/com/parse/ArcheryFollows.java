@@ -70,10 +70,44 @@ public class ArcheryFollows extends Application {
         ParticipantsQuery pq = new ParticipantsQuery();
         ResultatsQuery rq = new ResultatsQuery();
 
-        //TestCreation d'un archer
+        //TestCreation
         //aq.createArcher();
+        //arcq.createArc();
+        //cq.createClub();
+        //eq.createEvenement();
+        //bq.createBlason();
+        //pq.inscription();
+        //rq.sauvegarder();
+
+        String licenceArcher = "Toto";
+        String identifiantClub = "67203001";
+
+        Date today = Calendar.getInstance().getTime();
+        String dateEvent = Utils.getDateInFormat(today);
+
+        String distance = "1234A";
+
+        aArcher(cq, identifiantClub);
+        bArc(aq, licenceArcher);
+        cClub(aq, licenceArcher);
+        dEvenement(cq, identifiantClub);
+        eBlason(eq, dateEvent, identifiantClub);
+        fParticipants(aq, eq, licenceArcher, dateEvent, identifiantClub);
+        gResultats(aq, eq, bq, licenceArcher, dateEvent, identifiantClub, distance);
+
+        hAuthenticate(aq, licenceArcher, "test");
+        hAuthenticate(aq, licenceArcher, "test2");
 
 
+
+
+
+
+
+    }
+
+    public void aArcher(ClubQuery cq, String identifiantClub)
+    {
         Archer a = new Archer();
         a.setLicence("Toto");
         a.setNom("Dodo");
@@ -81,48 +115,36 @@ public class ArcheryFollows extends Application {
         a.setAnnee(2015);
         a.setDateDeNaissance(new Date());
         a.setNiveau("1");
-        a.setClubObjectId(cq.retrieveClubByIdentifiant("67203001"));
-        Log.v("add", cq.retrieveClubByIdentifiant("67203001"));
-        try {
-            a.save();
-        }
-        catch (ParseException e){
+        a.setMotDePasse(Utils.MD5("test"));
+        a.setClubObjectId(cq.retrieveClubByIdentifiant(identifiantClub));
 
-        }
+        save(a);
+    }
 
-        //ArcQuery q = new ArcQuery();
-        //q.createArc();
-
+    public void bArc(ArcherQuery aq, String licenceArcher)
+    {
         Arc myArc = new Arc();
         myArc.setPuissance("1234");
         myArc.setTaille("1m50");
         myArc.setType("RobinDesBois");
 
-        //attendu : eXPzjJDZ8P
-        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence("Toto"));
-        try {
-            myArc.save();
-        }
-        catch (Exception e){
-            Log.v("add", e.getMessage());
-        }
+        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence(licenceArcher));
+        save(myArc);
+    }
 
-     //   cq.createClub();
-
+    public void cClub(ArcherQuery aq, String licenceArcher)
+    {
         Club myClub = new Club();
         myClub.setNom("LMRTestt");
         myClub.setIdentifiant("1234A");
         myClub.setLieu("Tot");
-        myClub.setPresidentObjectId(aq.retrieveArcherByLicence("Toto"));
-        try {
-            myClub.save();
-        } catch (ParseException e)
-        {
-            //System.out.println(e.getMessage());
-        }
+        myClub.setPresidentObjectId(aq.retrieveArcherByLicence(licenceArcher));
 
-     //   eq.createEvenement();
+        save(myClub);
+    }
 
+    public void dEvenement(ClubQuery cq, String identifiantClub)
+    {
         Calendar c = GregorianCalendar.getInstance();
         Calendar sysdate = GregorianCalendar.getInstance();
         TimeZone tz = TimeZone.getTimeZone("Europe/Paris");
@@ -136,10 +158,6 @@ public class ArcheryFollows extends Application {
         sysdate.set(Calendar.SECOND, 0);
 
         Date sysdate_as_date = sysdate.getTime();
-        /*sysdate_as_date.setHours(0);
-        sysdate_as_date.setMinutes(0);
-        sysdate_as_date.setSeconds(0);*/
-
         Date today = Calendar.getInstance().getTime();
         String dateEvent = Utils.getDateInFormat(today);
 
@@ -147,47 +165,37 @@ public class ArcheryFollows extends Application {
         myEvent.setNom("MyEvent");
         myEvent.setDateEvenement(sysdate_as_date);
         myEvent.setDateEvent(dateEvent);
-        myEvent.setClubObjectId(cq.retrieveClubByIdentifiant("67203001"));
-        try {
-            myEvent.save();
-        } catch (ParseException e)
-        {
-            //System.out.println(e.getMessage());
-        }
+        myEvent.setClubObjectId(cq.retrieveClubByIdentifiant(identifiantClub));
 
-     //   bq.createBlason();
+        save(myEvent);
+    }
 
+    public void eBlason(EvenementQuery eq, String dateEvent, String identifiantClub)
+    {
         Blason myBlason = new Blason();
         myBlason.setDiametre("Test");
         myBlason.setDistance("1234A");
-        myBlason.setEvenementObjectId(myEvent.getObjectId());
-        try {
-            myBlason.save();
-        } catch (ParseException e)
-        {
-            //System.out.println(e.getMessage());
-        }
+        myBlason.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
 
-     //   pq.inscription();
+        save(myBlason);
+    }
 
-        String event = eq.retrieveEventByCriterion(dateEvent, "67203001");
-
+    public void fParticipants(ArcherQuery aq, EvenementQuery eq, String licenceArcher, String dateEvent, String identifiantClub)
+    {
         Participants myInscription = new Participants();
-        myInscription.setParticipantObjectId(aq.retrieveArcherByLicence("Toto"));
-        myInscription.setEvenementObjectId(event);
-        try {
-            myInscription.save();
-        } catch (ParseException e)
-        {
-            //System.out.println(e.getMessage());
-        }
+        myInscription.setParticipantObjectId(aq.retrieveArcherByLicence(licenceArcher));
+        myInscription.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
 
-     //   rq.sauvegarder();
+        save(myInscription);
+    }
 
+    public void gResultats(ArcherQuery aq, EvenementQuery eq, BlasonQuery bq,
+                           String licenceArcher, String dateEvent, String identifiantClub, String distance)
+    {
         Resultats resultats = new Resultats();
-        resultats.setEvenementObjectId(event);
-        resultats.setArcherObjectId(aq.retrieveArcherByLicence("Toto"));
-        resultats.setBlasonObjectId(myBlason.getObjectId());
+        resultats.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
+        resultats.setArcherObjectId(aq.retrieveArcherByLicence(licenceArcher));
+        resultats.setBlasonObjectId(bq.retrieveBlasonByCriterion(dateEvent, identifiantClub, distance));
         resultats.setVolee("1");
         resultats.setFleche1(9);
         resultats.setFleche2(10);
@@ -195,11 +203,24 @@ public class ArcheryFollows extends Application {
         resultats.setStatutF1("OK");
         resultats.setStatutF2("M");
         resultats.setStatutF3("P");
-        try {
-            resultats.save();
-        } catch (ParseException e)
+
+        save(resultats);
+    }
+
+    public void hAuthenticate(ArcherQuery aq, String licence, String password)
+    {
+        System.out.println(aq.authenticate(licence, password));
+    }
+
+
+    public void save(ParseObject item)
+    {
+        try
         {
-            //System.out.println(e.getMessage());
+            item.save();
+        }
+        catch (Exception e){
+            Log.v("add", e.getMessage());
         }
     }
 }

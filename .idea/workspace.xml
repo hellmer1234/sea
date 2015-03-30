@@ -18,13 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e895ecea-b59e-4f43-88a6-56045b4ab167" name="Default" comment="Initialisation du projet!&#10;Fonctionnel : création d'un archer">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ClubQuery.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ClubQuery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Evenement.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Evenement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Resultats.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Resultats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ResultatsQuery.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ResultatsQuery.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java" afterPath="$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sea-android.iws" />
@@ -51,11 +48,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArcheryFollows.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ArcheryFollows.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2595" max-vertical-offset="3180">
-              <caret line="149" column="60" selection-start-line="149" selection-start-column="60" selection-end-line="149" selection-end-column="60" />
+            <state vertical-scroll-proportion="2.8095238" vertical-offset="585" max-vertical-offset="3495">
+              <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArcherQuery.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1080">
+              <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlasonQuery.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="780">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +87,8 @@
       <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="600">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvenementQuery.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EvenementQuery.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82012194" vertical-offset="421" max-vertical-offset="1005">
-              <caret line="46" column="95" selection-start-line="46" selection-start-column="95" selection-end-line="46" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="1005">
+              <caret line="59" column="5" selection-start-line="37" selection-start-column="11" selection-end-line="59" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,22 +156,22 @@
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/test/ArcheryFollowsTest.java" />
         <option value="$PROJECT_DIR$/ToDoList/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/ToDoList/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Archer.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Arc.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Club.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Blason.java" />
-        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Participants.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcQuery.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ParticipantsQuery.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ResultatsQuery.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Resultats.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/Evenement.java" />
-        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ClubQuery.java" />
-        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java" />
         <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java" />
+        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java" />
+        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java" />
+        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java" />
+        <option value="$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java" />
       </list>
     </option>
   </component>
@@ -596,7 +617,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1277" height="728" extended-state="6" />
+    <frame x="0" y="23" width="1277" height="728" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="528" />
@@ -614,7 +635,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41830066" sideWeight="0.5303644" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41830066" sideWeight="0.5303644" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -662,18 +683,6 @@
           <line>40</line>
           <properties />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java</url>
-          <line>174</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java</url>
-          <line>172</line>
-          <properties />
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java</url>
@@ -912,14 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="390">
-          <caret line="17" column="9" selection-start-line="9" selection-start-column="7" selection-end-line="17" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/Arc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="750">
@@ -993,26 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053380784" vertical-offset="165" max-vertical-offset="765">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/ToDoList/libs/Parse-1.9.0.jar!/com/parse/ParseQuery.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="3371" max-vertical-offset="4260">
@@ -1031,16 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2130" max-vertical-offset="3180">
-          <caret line="149" column="60" selection-start-line="149" selection-start-column="60" selection-end-line="149" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/Evenement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="555">
@@ -1053,8 +1024,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/EvenementQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82012194" vertical-offset="421" max-vertical-offset="1005">
-          <caret line="46" column="95" selection-start-line="46" selection-start-column="95" selection-end-line="46" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="1005">
+          <caret line="59" column="5" selection-start-line="37" selection-start-column="11" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/BlasonQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="780">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/util/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="600">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/entity/ArcherQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1080">
+          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToDoList/src/com/parse/ArcheryFollows.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8095238" vertical-offset="585" max-vertical-offset="3495">
+          <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
