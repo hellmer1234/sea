@@ -24,7 +24,7 @@ public class ArcherQuery {
         }
     }
 
-    public String retrieveArcherByLicence(String licence)
+    public String retrieveArcherIdByLicence(String licence)
     {
         ParseQuery query=new ParseQuery("Archer");
         query.whereEqualTo("Licence", licence);
@@ -41,6 +41,25 @@ public class ArcherQuery {
         }
 
         return "NoResult";
+    }
+
+    public Archer retrieveArcherByLicence(String licence)
+    {
+        ParseQuery query=new ParseQuery("Archer");
+        query.whereEqualTo("Licence", licence);
+        query.setLimit(1);
+
+        try
+        {
+            ParseObject po = query.getFirst();
+            return (Archer)po;
+        }
+        catch (ParseException e)
+        {
+
+        }
+
+        return null;
     }
 
     public String authenticate(String licence, String password)

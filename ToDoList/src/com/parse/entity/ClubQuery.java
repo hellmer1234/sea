@@ -20,7 +20,7 @@ public class ClubQuery {
         }
     }
 
-    public String retrieveClubByIdentifiant(String identifiant)
+    public String retrieveClubIdByIdentifiant(String identifiant)
     {
         ParseQuery query=new ParseQuery("Club");
         query.whereEqualTo("Identifiant", identifiant);

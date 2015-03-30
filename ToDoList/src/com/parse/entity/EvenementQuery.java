@@ -35,14 +35,14 @@ public class EvenementQuery {
         }
     }
 
-    public String retrieveEventByCriterion(String dateEvenement, String organisateur){
+    public String retrieveEventIdByCriterion(String dateEvenement, String organisateur){
         ParseQuery query=new ParseQuery("Evenement");
 
         query.whereEqualTo("DateEvent", dateEvenement);
         //query.whereLessThanOrEqualTo("DateEvenement", dateFin);
 
         ClubQuery cq = new ClubQuery();
-        String organisateurId = cq.retrieveClubByIdentifiant(organisateur);
+        String organisateurId = cq.retrieveClubIdByIdentifiant(organisateur);
 
         query.whereEqualTo("Organisateur", ParseObject.createWithoutData("Club", organisateurId));
         query.setLimit(1);

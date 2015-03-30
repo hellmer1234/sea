@@ -20,7 +20,7 @@ public class BlasonQuery {
         }
     }
 
-    public String retrieveBlasonByCriterion(String dateEvenement, String organisateur, String distance){
+    public String retrieveBlasonIdByCriterion(String dateEvenement, String organisateur, String distance){
         ParseQuery query=new ParseQuery("Blason");
 
         query.whereEqualTo("Distance", distance);

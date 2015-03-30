@@ -116,7 +116,7 @@ public class ArcheryFollows extends Application {
         a.setDateDeNaissance(new Date());
         a.setNiveau("1");
         a.setMotDePasse(Utils.MD5("test"));
-        a.setClubObjectId(cq.retrieveClubByIdentifiant(identifiantClub));
+        a.setClubObjectId(cq.retrieveClubIdByIdentifiant(identifiantClub));
 
         save(a);
     }
@@ -128,7 +128,7 @@ public class ArcheryFollows extends Application {
         myArc.setTaille("1m50");
         myArc.setType("RobinDesBois");
 
-        myArc.setProprietaireObjectId(aq.retrieveArcherByLicence(licenceArcher));
+        myArc.setProprietaireObjectId(aq.retrieveArcherIdByLicence(licenceArcher));
         save(myArc);
     }
 
@@ -138,7 +138,7 @@ public class ArcheryFollows extends Application {
         myClub.setNom("LMRTestt");
         myClub.setIdentifiant("1234A");
         myClub.setLieu("Tot");
-        myClub.setPresidentObjectId(aq.retrieveArcherByLicence(licenceArcher));
+        myClub.setPresidentObjectId(aq.retrieveArcherIdByLicence(licenceArcher));
 
         save(myClub);
     }
@@ -165,7 +165,7 @@ public class ArcheryFollows extends Application {
         myEvent.setNom("MyEvent");
         myEvent.setDateEvenement(sysdate_as_date);
         myEvent.setDateEvent(dateEvent);
-        myEvent.setClubObjectId(cq.retrieveClubByIdentifiant(identifiantClub));
+        myEvent.setClubObjectId(cq.retrieveClubIdByIdentifiant(identifiantClub));
 
         save(myEvent);
     }
@@ -175,7 +175,7 @@ public class ArcheryFollows extends Application {
         Blason myBlason = new Blason();
         myBlason.setDiametre("Test");
         myBlason.setDistance("1234A");
-        myBlason.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
+        myBlason.setEvenementObjectId(eq.retrieveEventIdByCriterion(dateEvent, identifiantClub));
 
         save(myBlason);
     }
@@ -183,8 +183,8 @@ public class ArcheryFollows extends Application {
     public void fParticipants(ArcherQuery aq, EvenementQuery eq, String licenceArcher, String dateEvent, String identifiantClub)
     {
         Participants myInscription = new Participants();
-        myInscription.setParticipantObjectId(aq.retrieveArcherByLicence(licenceArcher));
-        myInscription.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
+        myInscription.setParticipantObjectId(aq.retrieveArcherIdByLicence(licenceArcher));
+        myInscription.setEvenementObjectId(eq.retrieveEventIdByCriterion(dateEvent, identifiantClub));
 
         save(myInscription);
     }
@@ -193,9 +193,9 @@ public class ArcheryFollows extends Application {
                            String licenceArcher, String dateEvent, String identifiantClub, String distance)
     {
         Resultats resultats = new Resultats();
-        resultats.setEvenementObjectId(eq.retrieveEventByCriterion(dateEvent, identifiantClub));
-        resultats.setArcherObjectId(aq.retrieveArcherByLicence(licenceArcher));
-        resultats.setBlasonObjectId(bq.retrieveBlasonByCriterion(dateEvent, identifiantClub, distance));
+        resultats.setEvenementObjectId(eq.retrieveEventIdByCriterion(dateEvent, identifiantClub));
+        resultats.setArcherObjectId(aq.retrieveArcherIdByLicence(licenceArcher));
+        resultats.setBlasonObjectId(bq.retrieveBlasonIdByCriterion(dateEvent, identifiantClub, distance));
         resultats.setVolee("1");
         resultats.setFleche1(9);
         resultats.setFleche2(10);
