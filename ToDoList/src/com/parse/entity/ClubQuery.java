@@ -4,6 +4,8 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ClubQuery {
@@ -36,5 +38,51 @@ public class ClubQuery {
 
         }
         return "NoResult";
+    }
+
+    public List<String> retrieveArchersIdList(String identifiant)
+    {
+        ParseQuery query=new ParseQuery("Archer");
+        query.whereEqualTo("AppartientAClub", ParseObject.createWithoutData("Club", retrieveClubIdByIdentifiant(identifiant)));
+        //query.setLimit(1);
+
+        try
+        {
+            List<ParseObject> resultset = query.find();
+            List<String> resultat = new ArrayList<String>();;
+
+            for(int i=0; i<resultset.size(); i++)
+                resultat.add(i, resultset.get(i).getObjectId());
+
+            return resultat;
+        }
+        catch (ParseException e)
+        {
+
+        }
+        return null;
+    }
+
+    public List<Archer> retrieveArchersList(String identifiant)
+    {
+        ParseQuery query=new ParseQuery("Archer");
+        query.whereEqualTo("AppartientAClub", ParseObject.createWithoutData("Club", retrieveClubIdByIdentifiant(identifiant)));
+        //query.setLimit(1);
+
+        try
+        {
+            List<ParseObject> resultset = query.find();
+            List<Archer> resultat = new ArrayList<Archer>();;
+
+            for(int i=0; i<resultset.size(); i++)
+                resultat.add(i, (Archer)resultset.get(i));
+
+            return resultat;
+        }
+        catch (ParseException e)
+        {
+
+        }
+        return null;
     }
 }

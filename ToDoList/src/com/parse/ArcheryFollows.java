@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.TimeZone;
 
 
@@ -96,10 +97,14 @@ public class ArcheryFollows extends Application {
         gResultats(aq, eq, bq, licenceArcher, dateEvent, identifiantClub, distance);
 
         hAuthenticate(aq, licenceArcher, "test");
+        // return "AUTHENTICATED"
+
         hAuthenticate(aq, licenceArcher, "test2");
+        // return "BAD_AUTHENTICATION"
 
-
-
+        List<String> listeArchersClub = cq.retrieveArchersList(identifiantClub);
+        for(int i=0; i<listeArchersClub.size(); i++)
+            System.out.println("Archer "+i+" : " + listeArchersClub.get(i));
 
 
 

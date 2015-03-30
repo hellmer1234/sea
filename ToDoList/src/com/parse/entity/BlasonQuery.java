@@ -27,7 +27,7 @@ public class BlasonQuery {
         //query.whereLessThanOrEqualTo("DateEvenement", dateFin);
 
         EvenementQuery eq = new EvenementQuery();
-        String evenementId = eq.retrieveEventByCriterion(dateEvenement, organisateur);
+        String evenementId = eq.retrieveEventIdByCriterion(dateEvenement, organisateur);
 
         query.whereEqualTo("Evenement", ParseObject.createWithoutData("Evenement", evenementId));
         query.setLimit(1);
