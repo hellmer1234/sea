@@ -13,6 +13,10 @@ public class Evenement extends ParseObject {
         return getString("Nom");
     }
 
+    public String getDateEvent(){
+        return getString("DateEvent");
+    }
+
     public Date getDateEvenement(){
         return getDate("DateEvenement");
     }
@@ -27,6 +31,10 @@ public class Evenement extends ParseObject {
 
     public void setNom(String nom){
         put("Nom", nom);
+    }
+
+    public void setDateEvent(String dateEvent){
+        put("DateEvent", dateEvent);
     }
 
     public void setDateEvenement(Date dateEvenement){

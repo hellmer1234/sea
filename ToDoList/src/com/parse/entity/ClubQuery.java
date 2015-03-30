@@ -20,10 +20,10 @@ public class ClubQuery {
         }
     }
 
-    public String retrieveClubByLicence(String licence)
+    public String retrieveClubByIdentifiant(String identifiant)
     {
         ParseQuery query=new ParseQuery("Club");
-        query.whereEqualTo("Identifiant", licence);
+        query.whereEqualTo("Identifiant", identifiant);
         query.setLimit(1);
 
         try
